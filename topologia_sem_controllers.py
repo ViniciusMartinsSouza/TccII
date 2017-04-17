@@ -27,6 +27,8 @@ def topology():
     net.addLink(h1, s1)
     net.addLink(h2, s0)
     net.addLink(h3, s1)
+
+    net.start()
    
 if __name__ == '__main__':
     setLogLevel('info')

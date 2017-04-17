@@ -29,6 +29,12 @@ def topology():
     net.addLink(h3, s1)
 
     net.start()
+
+    info('*** Running CLI\n')
+    CLI(net)
+
+    info('*** Stopping network')
+    net.stop()
    
 if __name__ == '__main__':
     setLogLevel('info')

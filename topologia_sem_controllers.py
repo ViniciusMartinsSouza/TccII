@@ -23,6 +23,6 @@ def topology():
 
     net.start()
 
-     if __name__ == '__main__':
+if __name__ == '__main__':
          setLogLevel('info')
          topology()

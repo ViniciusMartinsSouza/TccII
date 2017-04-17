@@ -13,16 +13,16 @@ def topology():
     h2 = net.addHost('h3')
     h3 = net.addHost('h4')
 
-    s1 = net.addSwitch('s1')
-    s2 = net.addSwitch('s2')
+    s0 = net.addSwitch('s1')
+    s1 = net.addSwitch('s2')
 
-    net.addLink(h0, s1)
-    net.addLink(h1, s2)
-    net.addLink(h2, s1)
-    net.addLink(h3, s2)
+    net.addLink(h0, s0)
+    net.addLink(h1, s1)
+    net.addLink(h2, s0)
+    net.addLink(h3, s1)
 
     net.start()
 
 if __name__ == '__main__':
-         setLogLevel('info')
-         topology()
+    setLogLevel('info')
+    topology()

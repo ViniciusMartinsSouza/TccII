@@ -13,10 +13,10 @@ def topology():
 
     info('*** Adding hosts\n')
 
-    d0 = net.addDocker('d1', ip='10.0.0.250', dimage="ubuntu:trusty")
+    d0 = net.addDocker('d0', ip='10.0.0.250', dimage="ubuntu:trusty")
     d1 = net.addDocker('d1', ip='10.0.0.251', dimage="ubuntu:trusty")
-    d2 = net.addDocker('d1', ip='10.0.0.252', dimage="ubuntu:trusty")
-    d3 = net.addDocker('d1', ip='10.0.0.253', dimage="ubuntu:trusty")
+    d2 = net.addDocker('d2', ip='10.0.0.252', dimage="ubuntu:trusty")
+    d3 = net.addDocker('d3', ip='10.0.0.253', dimage="ubuntu:trusty")
 
     info('*** Adding switch\n')
     s0 = net.addSwitch('s0')

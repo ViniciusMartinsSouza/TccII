@@ -32,6 +32,12 @@ def topology():
     net.addLink(h3, s1)
     net.addLink(s0, s1)
 
+    net.addController(c0)
+    net.addController(c1)
+
+    net.addLink(s0, c0)
+    net.addLink(s1, c1)
+
     net.start()
 
     info('*** Running CLI\n')

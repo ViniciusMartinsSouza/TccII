@@ -4,10 +4,6 @@ from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.link import TCLink, Link
 
-
-def topology():
-
-
     c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
     c1 = RemoteController( 'c1', ip='172.31.32.83', port=6635 )
 
@@ -53,6 +49,3 @@ def topology():
     info('*** Stopping network')
     net.stop()
    
-if __name__ == '__main__':
-    setLogLevel('info')
-    topology()

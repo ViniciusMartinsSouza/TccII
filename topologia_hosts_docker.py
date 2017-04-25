@@ -9,12 +9,13 @@ from mininet.topolib import TreeTopo
 c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
 c1 = RemoteController( 'c1', ip='172.31.32.83', port=6633 )
 
-
+cmap = { 's0': c0, 's1': c1}
 
 class MultiSwitch( OVSSwitch ):
     "Custom Switch() subclass that connects to different controllers"
     def start( self, controllers ):
         return OVSSwitch.start( self, [ cmap[ self.name ] ] )
+
 
 
 net = Mininet(switch=MultiSwitch, build=False )
@@ -33,9 +34,11 @@ d2 = net.addDocker('d2', ip='10.0.0.252', dimage="ubuntu:trusty")
 d3 = net.addDocker('d3', ip='10.0.0.253', dimage="ubuntu:trusty")
 '''
 
+'''
 info('*** Adding switch\n')
 s0 = net.addSwitch('s0')
 s1 = net.addSwitch('s1')
+'''
 
 info('*** Creating links\n')
 net.addLink(h0, s0)
@@ -43,6 +46,10 @@ net.addLink(h1, s1)
 net.addLink(h2, s0)
 net.addLink(h3, s1)
 net.addLink(s0, s1)
+
+
+for c in [ c0, c1 ]:
+    net.addController(c)
 
 net.build()
 net.start()

@@ -5,12 +5,6 @@ from mininet.log import setLogLevel, info
 from mininet.link import TCLink, Link
 
 
-
-class MultiSwitch( OVSSwitch ):
-    "Custom Switch() subclass that connects to different controllers"
-    def start( self, controllers ):
-        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
-
 def topology():
 
 
@@ -40,6 +34,12 @@ def topology():
 
 
     cmap = { 's0': c0, 's1': c1}
+
+    
+    class MultiSwitch( OVSSwitch ):
+        "Custom Switch() subclass that connects to different controllers"
+        def start( self, controllers ):
+            return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
 
     for c in [ c0, c1 ]:

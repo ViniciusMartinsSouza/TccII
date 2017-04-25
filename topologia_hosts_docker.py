@@ -5,7 +5,7 @@ from mininet.log import setLogLevel, info
 from mininet.link import TCLink, Link
 
 c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
-c1 = RemoteController( 'c1', ip='172.31.32.83', port=6635 )
+c1 = RemoteController( 'c1', ip='172.31.32.83', port=6633 )
 
 cmap = { 's0': c0, 's1': c1}
 

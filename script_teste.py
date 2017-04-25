@@ -1,36 +1,45 @@
-#!/usr/bin/python
-
-"""
-Create a network where different switches are connected to
-different controllers, by creating a custom Switch() subclass.
-"""
-
-from mininet.net import Mininet
-from mininet.node import OVSSwitch, Controller, RemoteController
-from mininet.topolib import TreeTopo
-from mininet.log import setLogLevel
+from mininet.net import Containernet
+from mininet.node import Controller, Docker, OVSSwitch, RemoteController
 from mininet.cli import CLI
+from mininet.log import setLogLevel, info
+from mininet.link import TCLink, Link
 
-setLogLevel( 'info' )
 
-# Two local and one "external" controller (which is actually c0)
-# Ignore the warning message that the remote isn't (yet) running
-c0 = Controller( 'c0', port=6633 )
-c1 = Controller( 'c1', port=6634 )
-c2 = RemoteController( 'c2', ip='172.31.32.83', port=6633 )
+c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
+c1 = RemoteController( 'c1', ip='172.31.32.83', port=6633 )
 
-cmap = { 's1': c0, 's2': c1, 's3': c2 }
+def topology():
 
-class MultiSwitch( OVSSwitch ):
-    "Custom Switch() subclass that connects to different controllers"
-    def start( self, controllers ):
-        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
-topo = TreeTopo( depth=2, fanout=2 )
-net = Mininet( topo=topo, switch=MultiSwitch, build=False )
-for c in [ c0, c1 ]:
-    net.addController(c)
-net.build()
-net.start()
-CLI( net )
-net.stop()
+    net = Containernet(controller=Controller)
+
+
+    info('*** Adding hosts\n')
+    h0 = net.addHost('h0')
+    h1 = net.addHost('h1')
+    h2 = net.addHost('h2')
+    h3 = net.addHost('h3')
+
+
+    info('*** Adding switch\n')
+    s0 = net.addSwitch('s0')
+    s1 = net.addSwitch('s1')
+
+    info('*** Creating links\n')
+    net.addLink(h0, s0)
+    net.addLink(h1, s1)
+    net.addLink(h2, s0)
+    net.addLink(h3, s1)
+    net.addLink(s0, s1)
+
+    net.start()
+
+    info('*** Running CLI\n')
+    CLI(net)
+
+    info('*** Stopping network')
+    net.stop()
+   
+if __name__ == '__main__':
+    setLogLevel('info')
+    topology()

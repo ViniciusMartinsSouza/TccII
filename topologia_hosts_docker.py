@@ -34,7 +34,9 @@ d2 = net.addDocker('d2', ip='10.0.0.252', dimage="ubuntu:trusty")
 d3 = net.addDocker('d3', ip='10.0.0.253', dimage="ubuntu:trusty")
 '''
 
-
+info('*** Adding switch\n')
+s0 = net.addSwitch('s0')
+s1 = net.addSwitch('s1')
 
 info('*** Creating links\n')
 net.addLink(h0, s0)

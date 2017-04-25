@@ -5,6 +5,12 @@ from mininet.log import setLogLevel, info
 from mininet.link import TCLink, Link
 
 
+
+class MultiSwitch( OVSSwitch ):
+    "Custom Switch() subclass that connects to different controllers"
+    def start( self, controllers ):
+        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
+
 def topology():
 
 
@@ -29,11 +35,12 @@ def topology():
     net.addLink(d3, s1)
     net.addLink(s0, s1)
 
-    c0 = RemoteController( 'c0', ip='127.0.0.1', port=6633 )
-    c1 = RemoteController( 'c1', ip='127.0.0.1', port=6635 )
+    c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
+    c1 = RemoteController( 'c1', ip='172.31.32.83', port=6635 )
 
 
     cmap = { 's0': c0, 's1': c1}
+
 
     for c in [ c0, c1 ]:
         net.addController(c)

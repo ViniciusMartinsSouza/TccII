@@ -1,5 +1,5 @@
 from mininet.net import Containernet
-from mininet.node import Controller, Docker, OVSSwitch
+from mininet.node import Controller, Docker, OVSSwitch, RemoteController
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.link import TCLink, Link

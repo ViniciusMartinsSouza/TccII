@@ -1,4 +1,4 @@
-from mininet.net import Containernet
+from mininet.net import Mininet
 from mininet.node import Controller, Docker, OVSSwitch, RemoteController
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
@@ -11,7 +11,7 @@ c1 = RemoteController( 'c1', ip='172.31.32.83', port=6633 )
 def topology():
 
 
-    net = Containernet(controller=Controller)
+    net = Mininet( controller=Controller, switch=OVSSwitch )
 
 
     info('*** Adding hosts\n')
@@ -38,7 +38,14 @@ def topology():
     net.addLink(s0, c0)
     net.addLink(s1, c1)
 
-    net.start()
+    print "*** Starting network"
+    net.build()
+
+    c0.start()
+    c1.start()
+    
+    s0.start( [ c0 ] )
+    s1.start( [ c1 ] )
 
     info('*** Running CLI\n')
     CLI(net)

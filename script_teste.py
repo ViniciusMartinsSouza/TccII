@@ -1,71 +1,36 @@
-from mininet.net import Containernet
-from mininet.node import Controller, Docker, OVSSwitch
+#!/usr/bin/python
+
+"""
+Create a network where different switches are connected to
+different controllers, by creating a custom Switch() subclass.
+"""
+
+from mininet.net import Mininet
+from mininet.node import OVSSwitch, Controller, RemoteController
+from mininet.topolib import TreeTopo
+from mininet.log import setLogLevel
 from mininet.cli import CLI
-from mininet.log import setLogLevel, info
-from mininet.link import TCLink, Link
 
+setLogLevel( 'info' )
 
-def topology():
+# Two local and one "external" controller (which is actually c0)
+# Ignore the warning message that the remote isn't (yet) running
+c0 = Controller( 'c0', port=6633 )
+c1 = Controller( 'c1', port=6634 )
+c2 = RemoteController( 'c2', ip='172.31.32.83', port=6633 )
 
-    "Create a network with some docker containers acting as hosts."
+cmap = { 's1': c0, 's2': c1, 's3': c2 }
 
-    net = Containernet(controller=Controller)
+class MultiSwitch( OVSSwitch ):
+    "Custom Switch() subclass that connects to different controllers"
+    def start( self, controllers ):
+        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
-    info('*** Adding controller\n')
-    net.addController('c0')
-
-    info('*** Adding hosts\n')
-    h1 = net.addHost('h1')
-    h2 = net.addHost('h2')
-
-    info('*** Adding docker containers\n')
-    d1 = net.addDocker('d1', ip='10.0.0.251', dimage="ubuntu:trusty")
-    d2 = net.addDocker('d2', ip='10.0.0.252', dimage="ubuntu:trusty", cpu_period=50000, cpu_quota=25000)
-    d3 = net.addHost(
-        'd3', ip='11.0.0.253', cls=Docker, dimage="ubuntu:trusty", cpu_shares=20)
-    d5 = net.addDocker('d5', dimage="ubuntu:trusty", volumes=["/:/mnt/vol1:rw"])
-
-    info('*** Adding switch\n')
-    s1 = net.addSwitch('s1')
-    s2 = net.addSwitch('s2', cls=OVSSwitch)
-    s3 = net.addSwitch('s3')
-
-    info('*** Creating links\n')
-    net.addLink(h1, s1)
-    net.addLink(s1, d1)
-    net.addLink(h2, s2)
-    net.addLink(d2, s2)
-    net.addLink(s1, s2)
-    #net.addLink(s1, s2, cls=TCLink, delay="100ms", bw=1, loss=10)
-    # try to add a second interface to a docker container
-    net.addLink(d2, s3, params1={"ip": "11.0.0.254/8"})
-    net.addLink(d3, s3)
-
-    info('*** Starting network\n')
-    net.start()
-
-    net.ping([d1, d2])
-
-    # our extended ping functionality
-    net.ping([d1], manualdestip="10.0.0.252")
-    net.ping([d2, d3], manualdestip="11.0.0.254")
-
-    info('*** Dynamically add a container at runtime\n')
-    d4 = net.addDocker('d4', dimage="ubuntu:trusty")
-    # we have to specify a manual ip when we add a link at runtime
-    net.addLink(d4, s1, params1={"ip": "10.0.0.254/8"})
-    # other options to do this
-    #d4.defaultIntf().ifconfig("10.0.0.254 up")
-    #d4.setIP("10.0.0.254")
-
-    net.ping([d1], manualdestip="10.0.0.254")
-
-    info('*** Running CLI\n')
-    CLI(net)
-
-    info('*** Stopping network')
-    net.stop()
-
-if __name__ == '__main__':
-    setLogLevel('info')
-    topology()
+topo = TreeTopo( depth=2, fanout=2 )
+net = Mininet( topo=topo, switch=MultiSwitch, build=False )
+for c in [ c0, c1 ]:
+    net.addController(c)
+net.build()
+net.start()
+CLI( net )
+net.stop()

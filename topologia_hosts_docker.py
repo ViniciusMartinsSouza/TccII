@@ -8,6 +8,18 @@ from mininet.link import TCLink, Link
 def topology():
 
 
+    c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
+    c1 = RemoteController( 'c1', ip='172.31.32.83', port=6635 )
+
+    cmap = { 's0': c0, 's1': c1}
+
+    class MultiSwitch( OVSSwitch ):
+        "Custom Switch() subclass that connects to different controllers"
+        def start( self, controllers ):
+            return OVSSwitch.start( self, [ cmap[ self.name ] ] )
+
+    topo = TreeTopo( depth=2, fanout=2 )
+
     net = Mininet( topo=topo, switch=MultiSwitch, build=False )
 
 
@@ -28,18 +40,6 @@ def topology():
     net.addLink(d2, s0)
     net.addLink(d3, s1)
     net.addLink(s0, s1)
-
-    c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
-    c1 = RemoteController( 'c1', ip='172.31.32.83', port=6635 )
-
-
-    cmap = { 's0': c0, 's1': c1}
-
-    
-    class MultiSwitch( OVSSwitch ):
-        "Custom Switch() subclass that connects to different controllers"
-        def start( self, controllers ):
-            return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
 
     for c in [ c0, c1 ]:

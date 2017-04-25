@@ -22,10 +22,10 @@ net = Mininet( topo=topo, switch=MultiSwitch, build=False )
 
 info('*** Adding hosts\n')
 
-    h0 = net.addHost('h0')
-    h1 = net.addHost('h1')
-    h2 = net.addHost('h2')
-    h3 = net.addHost('h3')
+h0 = net.addHost('h0')
+h1 = net.addHost('h1')
+h2 = net.addHost('h2')
+h3 = net.addHost('h3')
 
 '''
 d0 = net.addDocker('d0', ip='10.0.0.250', dimage="ubuntu:trusty")

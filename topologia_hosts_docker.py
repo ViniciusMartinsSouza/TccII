@@ -44,10 +44,6 @@ net.addLink(h2, s0)
 net.addLink(h3, s1)
 net.addLink(s0, s1)
 
-
-for c in [ c0, c1 ]:
-    net.addController(c)
-
 net.build()
 net.start()
 

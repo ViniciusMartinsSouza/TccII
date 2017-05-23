@@ -1,0 +1,4 @@
+Comandos para executar assim que iniciar o onos:
+
+app activate org.onosproject.openflow
+app activate org.onosproject.fwd

@@ -9,10 +9,16 @@ from mininet.topolib import TreeTopo
 c0 = RemoteController( 'c0', ip='172.31.32.83', port=6633 )
 c1 = RemoteController( 'c1', ip='172.31.45.92', port=6633 )
 
-cmap = { 's1': c0, 's1': c1}
+cmap = { 's0': c0, 's1': c1}
+
+class MultiSwitch( OVSSwitch ):
+    "Custom Switch() subclass that connects to different controllers"
+    def start( self, controllers ):
+        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
 
-net = Mininet(controller=Controller, switch=OVSSwitch)
+
+net = Mininet(switch=MultiSwitch, build=False )
 
 info('*** Adding hosts\n')
 

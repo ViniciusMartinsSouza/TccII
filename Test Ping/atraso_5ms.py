@@ -31,7 +31,7 @@ net.addLink(h0, s0)
 net.addLink(h1, s1)
 net.addLink(h2, s0)
 net.addLink(h3, s1)
-net.addLink(s0, s1,delay="5ms")
+net.addLink(s0, s1, delay="100ms", bw=1, loss=10)
 
 
 for c in [ c0, c1 ]:

@@ -15,13 +15,19 @@ script, host = argv
 
 setLogLevel( 'info' )
 
+
 c0 = RemoteController( 'c0', ip='192.168.15.12', port=6633 )
 c1 = RemoteController( 'c1', ip='192.168.15.13', port=6633 )
 
-cmap = { 's1': c0, 's1': c1}
+cmap = { 's0': c0, 's1': c1}
 
+class MultiSwitch( OVSSwitch ):
+    "Custom Switch() subclass that connects to different controllers"
+    def start( self, controllers ):
+        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
-net = Mininet(controller=Controller, switch=OVSSwitch, link=TCLink)
+net = Mininet(controller=Controller, switch=MultiSwitch, link=TCLink)
+
 
 
 h0 = net.addHost('h0')
@@ -33,25 +39,25 @@ h3 = net.addHost('h3')
 s0 = net.addSwitch('s0')
 s1 = net.addSwitch('s1')
 
-
 net.addLink(h0, s0)
 net.addLink(h1, s1)
 net.addLink(h2, s0)
 net.addLink(h3, s1)
-net.addLink(s0, s1)
+net.addLink(s0, s1 ,)
 
 
 for c in [ c0, c1 ]:
     net.addController(c)
 
 net.build()
+
 net.start()
 
 h = net.get(host)
 hosts = net.hosts
 
 h.sendCmd("iperf -s")
-file = open( "TestIperf/" + host + " Iperf Test Topo I", "wb")
+file = open("TestIperf/" + host + " Iperf Test Topo II", "wb")
 
 for i in hosts:
 	if h.IP() != i.IP():
@@ -60,6 +66,7 @@ for i in hosts:
 		file.write(output +"\n\n")
 
 file.close()
+
 
 
 #CLI(net)

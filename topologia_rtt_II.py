@@ -10,6 +10,7 @@ from mininet.topolib import TreeTopo
 from mininet.log import setLogLevel
 from mininet.cli import CLI
 from mininet.link import TCLink
+import re
 import sys
 
 print  sys.argv[1:]
@@ -25,8 +26,8 @@ else:
 setLogLevel( 'info' )
 
 
-c0 = RemoteController( 'c0', ip='50.112.14.166', port=6633 )
-c1 = RemoteController( 'c1', ip='52.42.162.4', port=6633 )
+c0 = RemoteController( 'c0', ip='192.168.15.12', port=6633 )
+c1 = RemoteController( 'c1', ip='192.168.15.13', port=6633 )
 
 cmap = { 's0': c0, 's1': c1}
 
@@ -65,11 +66,20 @@ net.start()
 hosts = net.hosts
 
 for h in hosts:
+	nameFile = "TestPing/"+h.name  + " Ping Teste Topo II Atraso: " +bw+ " - Latencia: " + atraso
+	file = open(nameFile, "wb")
 	for i in hosts:
-		print('-------------------------',h.name, 'pingando para ', i.name, '-------------------------')
-		h.cmdPrint('ping -c ', nPing, ' ', i.IP())
-		print('/n')
+		if h.IP() != i.IP():
+			file.write('-------------------------' + h.name + ' pingando para ' + i.name + '-------------------------\n')
+			ping_output = h.cmd('ping -c ', nPing, ' ', i.IP())
+			match = re.search('ttl=(\d+) time=([\d.]+)', ping_output)
+			ttl = match.group(1)
+			rtt = match.group(2)
+			file.write(ping_output +"\n")
+			file.write(h.name+" ping para " + i.name +" rtt: "+rtt+"\n")
+			print(".")
 
+	file.close()
 
 #CLI(net)
 

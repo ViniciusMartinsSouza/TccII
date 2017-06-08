@@ -1,0 +1,51 @@
+----------------------------- h0-------------------------------- 
+iperf: ignoring extra argument -- 1G
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+------------------------------------------------------------
+Client connecting to 10.0.0.2, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  5] local 10.0.0.1 port 40528 connected with 10.0.0.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-40.0 sec   136 GBytes  29.2 Gbits/sec
+[  4] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 60734
+[  4]  0.0-40.0 sec   130 GBytes  28.0 Gbits/sec
+
+
+----------------------------- h2-------------------------------- 
+iperf: ignoring extra argument -- 1G
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+------------------------------------------------------------
+Client connecting to 10.0.0.2, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  5] local 10.0.0.3 port 48730 connected with 10.0.0.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-40.0 sec   135 GBytes  28.9 Gbits/sec
+[  4] local 10.0.0.3 port 5001 connected with 10.0.0.2 port 42188
+[  4]  0.0-40.0 sec   127 GBytes  27.2 Gbits/sec
+
+
+----------------------------- h3-------------------------------- 
+iperf: ignoring extra argument -- 1G
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+------------------------------------------------------------
+Client connecting to 10.0.0.2, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  5] local 10.0.0.4 port 55072 connected with 10.0.0.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-40.0 sec   124 GBytes  26.7 Gbits/sec
+[  4] local 10.0.0.4 port 5001 connected with 10.0.0.2 port 34070
+[  4]  0.0-40.0 sec   123 GBytes  26.4 Gbits/sec
+
+

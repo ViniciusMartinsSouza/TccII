@@ -10,7 +10,7 @@ import re
 import sys
 
 
-script, host = argv
+script, host, bw, t= argv
 
 
 setLogLevel( 'info' )
@@ -57,12 +57,12 @@ h = net.get(host)
 hosts = net.hosts
 
 h.sendCmd("iperf -s")
-file = open("TestIperf/" + host + " Iperf Test Topo II", "wb")
+file = open("TestIperf/" + host + " " + bw + "Gps " + t+ "s Iperf Test Topo II", "wb")
 
 for i in hosts:
 	if h.IP() != i.IP():
 		file.write("----------------------------- "+i.name+"-------------------------------- \n")
-		output = i.cmd("iperf -c " + h.IP())
+		output = i.cmd("iperf -c " + h.IP() +  " -r "+ bw + " -t " + t)
 		file.write(output +"\n\n")
 
 file.close()

@@ -58,12 +58,16 @@ hosts = net.hosts
 
 h.sendCmd("iperf3 -s")
 file = open("TestIperf/" + host + " " + bw + "ps " + t+ "s Iperf3 Test Topo II", "wb")
+msgErro = "error - unable to connect to server: No route to host"
 
 for i in hosts:
 	if h.IP() != i.IP():
 		file.write("----------------------------- "+i.name+"-------------------------------- \n")
-		output = i.cmd("iperf3 -c " + h.IP() +  " -b "+ bw + " -t " + t)
-		file.write(output +"\n\n")
+		while True:
+			output = i.cmd("iperf3 -c " + h.IP() +  " -b "+ bw + " -t " + t)
+			file.write(output +"\n\n")
+			if msgErro not in output:
+				break
 
 file.close()
 

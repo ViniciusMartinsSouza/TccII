@@ -1,4 +1,5 @@
 # Arquivo para Teste
-fo = open("foo.txt", "wb")
-fo.write("teste")
-fo.close()
+erro = 'error - unable to connect to server: No route to host'
+
+if 'error' in erro:
+	print("alerta")

@@ -27,7 +27,6 @@ sudo python topologia_iperf_I.py h0 2G 80
 sh clean.sh
 sudo python topologia_iperf_I.py h0 2G 100 
 sh clean.sh 
-sh clean.sh 
 
 sudo python topologia_iperf_I.py h0 3G 20 
 sh clean.sh

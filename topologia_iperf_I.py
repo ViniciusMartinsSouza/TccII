@@ -50,13 +50,13 @@ net.start()
 h = net.get(host)
 hosts = net.hosts
 
-h.sendCmd("iperf -s")
-file = open( "TestIperf/" + host + " " + bw + "Gps " + t + "s Iperf Test Topo I", "wb")
+h.sendCmd("iperf3 -s")
+file = open( "TestIperf/" + host + " " + bw + "ps " + t + "s Iperf3 Test Topo I", "wb")
 
 for i in hosts:
 	if h.IP() != i.IP():
 		file.write("----------------------------- "+i.name+"-------------------------------- \n")
-		output = i.cmd("iperf -c " + h.IP() + " -r "+ bw + " -t " + t)
+		output = i.cmd("iperf3 -c " + h.IP() + " -b "+ bw + " -t " + t)
 		file.write(output +"\n\n")
 
 file.close()

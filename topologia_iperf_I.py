@@ -15,8 +15,8 @@ script, host, bw, t = argv
 
 setLogLevel( 'info' )
 
-c0 = RemoteController( 'c0', ip='192.168.15.12', port=6633 )
-c1 = RemoteController( 'c1', ip='192.168.15.13', port=6633 )
+c0 = RemoteController( 'c0', ip='192.168.1.16', port=6633 )
+c1 = RemoteController( 'c1', ip='192.168.1.17', port=6633 )
 
 cmap = { 's1': c0, 's1': c1}
 

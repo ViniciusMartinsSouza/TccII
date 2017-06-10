@@ -4,6 +4,7 @@ date +"%T" > log
 
 #TOPO I -------------------------------------------------------------------------------
 #h0 Testes-------------------------------------------------------------------------
+'''
 sh clean.sh 
 sudo python topologia_iperf_I.py h0 1G 20 
 sh clean.sh
@@ -138,8 +139,9 @@ sudo python topologia_iperf_I.py h1 1G 80
 sh clean.sh
 #sudo python topologia_iperf_I.py h1 1G 100 
 sh clean.sh
-sh clean.sh 
+'''
 
+sh clean.sh 
 sudo python topologia_iperf_I.py h1 2G 20 
 sh clean.sh
 sudo python topologia_iperf_I.py h1 2G 40 

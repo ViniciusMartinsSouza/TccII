@@ -139,7 +139,7 @@ sudo python topologia_iperf_I.py h1 1G 80
 sh clean.sh
 #sudo python topologia_iperf_I.py h1 1G 100 
 sh clean.sh
-COMMENT
+
 
 sh clean.sh 
 sudo python topologia_iperf_I.py h1 2G 20 
@@ -497,7 +497,7 @@ sudo python topologia_iperf_I.py h3 10G 80
 sh clean.sh
 #sudo python topologia_iperf_I.py h3 10G 100 
 sh clean.sh
-
+COMMENT
 
 
 

@@ -1,0 +1,18 @@
+----------------------------- h0-------------------------------- 
+iperf3: error - unable to connect to server: No route to host
+
+
+iperf3: error - unable to connect to server: No route to host
+
+
+iperf3: error - unable to connect to server: Connection timed out
+
+
+----------------------------- h1-------------------------------- 
+iperf3: error - unable to connect to server: Connection timed out
+
+
+----------------------------- h2-------------------------------- 
+iperf3: error - unable to connect to server: Connection timed out
+
+

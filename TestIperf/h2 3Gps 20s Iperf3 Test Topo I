@@ -1,0 +1,96 @@
+----------------------------- h0-------------------------------- 
+Connecting to host 10.0.0.3, port 5201
+[  4] local 10.0.0.1 port 37180 connected to 10.0.0.3 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   326 MBytes  2.74 Gbits/sec    0   3.07 MBytes       
+[  4]   1.00-2.00   sec   357 MBytes  3.00 Gbits/sec    0   6.40 MBytes       
+[  4]   2.00-3.00   sec   359 MBytes  3.01 Gbits/sec  5797   4.71 MBytes       
+[  4]   3.00-4.00   sec   356 MBytes  2.99 Gbits/sec  1700   4.74 MBytes       
+[  4]   4.00-5.00   sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]   5.00-6.00   sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]   6.00-7.00   sec   356 MBytes  2.99 Gbits/sec    0   4.74 MBytes       
+[  4]   7.00-8.00   sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]   8.00-9.00   sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]   9.00-10.00  sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]  10.00-11.00  sec   359 MBytes  3.01 Gbits/sec    0   4.74 MBytes       
+[  4]  11.00-12.00  sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]  12.00-13.00  sec   356 MBytes  2.98 Gbits/sec    0   4.74 MBytes       
+[  4]  13.00-14.00  sec   360 MBytes  3.02 Gbits/sec    0   4.74 MBytes       
+[  4]  14.00-15.00  sec   356 MBytes  2.99 Gbits/sec    0   4.74 MBytes       
+[  4]  15.00-16.00  sec   356 MBytes  2.99 Gbits/sec    0   4.74 MBytes       
+[  4]  16.00-17.00  sec   358 MBytes  3.00 Gbits/sec    0   4.74 MBytes       
+[  4]  17.00-18.00  sec   359 MBytes  3.01 Gbits/sec    0   4.75 MBytes       
+[  4]  18.00-19.00  sec   356 MBytes  2.98 Gbits/sec    0   4.75 MBytes       
+[  4]  19.00-20.00  sec   359 MBytes  3.01 Gbits/sec    0   4.75 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  6.95 GBytes  2.99 Gbits/sec  7497             sender
+[  4]   0.00-20.00  sec  6.95 GBytes  2.99 Gbits/sec                  receiver
+
+iperf Done.
+
+
+----------------------------- h1-------------------------------- 
+Connecting to host 10.0.0.3, port 5201
+[  4] local 10.0.0.2 port 57876 connected to 10.0.0.3 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  1.54 MBytes  13.0 Mbits/sec   77   60.8 KBytes       
+[  4]   1.00-2.00   sec  3.00 MBytes  25.2 Mbits/sec    0    192 KBytes       
+[  4]   2.00-3.00   sec  3.75 MBytes  31.5 Mbits/sec    0    356 KBytes       
+[  4]   3.00-4.00   sec  2.12 MBytes  17.8 Mbits/sec  301    300 KBytes       
+[  4]   4.00-5.00   sec  2.00 MBytes  16.8 Mbits/sec  284   77.8 KBytes       
+[  4]   5.00-6.00   sec  2.50 MBytes  21.0 Mbits/sec    0   97.6 KBytes       
+[  4]   6.00-7.00   sec  1.02 GBytes  8.73 Gbits/sec  544    734 KBytes       
+[  4]   7.00-8.00   sec  1.73 GBytes  14.9 Gbits/sec    0    738 KBytes       
+[  4]   8.00-9.00   sec   356 MBytes  2.99 Gbits/sec    0    738 KBytes       
+[  4]   9.00-10.00  sec   358 MBytes  3.00 Gbits/sec    0    823 KBytes       
+[  4]  10.00-11.00  sec   358 MBytes  3.00 Gbits/sec    0    823 KBytes       
+[  4]  11.00-12.00  sec   358 MBytes  3.00 Gbits/sec    0    823 KBytes       
+[  4]  12.00-13.00  sec   357 MBytes  3.00 Gbits/sec  516    823 KBytes       
+[  4]  13.00-14.00  sec   359 MBytes  3.01 Gbits/sec    0    823 KBytes       
+[  4]  14.00-15.00  sec   268 MBytes  2.24 Gbits/sec  393    510 KBytes       
+[  4]  15.00-16.00  sec   221 MBytes  1.85 Gbits/sec  375   1.04 MBytes       
+[  4]  16.00-17.00  sec   584 MBytes  4.90 Gbits/sec    0   1.04 MBytes       
+[  4]  17.00-18.00  sec   356 MBytes  2.99 Gbits/sec    0   1.04 MBytes       
+[  4]  18.00-19.00  sec   359 MBytes  3.01 Gbits/sec    0   1.04 MBytes       
+[  4]  19.00-20.00  sec   358 MBytes  3.00 Gbits/sec    0   1.04 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  6.95 GBytes  2.99 Gbits/sec  2490             sender
+[  4]   0.00-20.00  sec  6.95 GBytes  2.99 Gbits/sec                  receiver
+
+iperf Done.
+
+
+----------------------------- h3-------------------------------- 
+Connecting to host 10.0.0.3, port 5201
+[  4] local 10.0.0.4 port 37528 connected to 10.0.0.3 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  2.05 MBytes  17.2 Mbits/sec    0    110 KBytes       
+[  4]   1.00-2.00   sec  1.00 MBytes  8.39 Mbits/sec  177   4.24 KBytes       
+[  4]   2.00-3.00   sec  1.01 GBytes  8.71 Gbits/sec   49    522 KBytes       
+[  4]   3.00-4.00   sec   358 MBytes  3.00 Gbits/sec    0    737 KBytes       
+[  4]   4.00-5.00   sec   358 MBytes  3.00 Gbits/sec    0   1.39 MBytes       
+[  4]   5.00-6.00   sec   356 MBytes  2.99 Gbits/sec    0   1.69 MBytes       
+[  4]   6.00-7.00   sec   357 MBytes  3.00 Gbits/sec    0   1.69 MBytes       
+[  4]   7.00-8.00   sec   358 MBytes  3.00 Gbits/sec    0   1.69 MBytes       
+[  4]   8.00-9.00   sec   359 MBytes  3.01 Gbits/sec    0   1.69 MBytes       
+[  4]   9.00-10.00  sec   358 MBytes  3.00 Gbits/sec  1029   1.21 MBytes       
+[  4]  10.00-11.00  sec   358 MBytes  3.00 Gbits/sec    0   1.21 MBytes       
+[  4]  11.00-12.00  sec   358 MBytes  3.00 Gbits/sec    0   1.21 MBytes       
+[  4]  12.00-13.00  sec   357 MBytes  2.99 Gbits/sec    0   1.39 MBytes       
+[  4]  13.00-14.00  sec   359 MBytes  3.01 Gbits/sec    0   1.39 MBytes       
+[  4]  14.00-15.00  sec   357 MBytes  2.99 Gbits/sec  754   1011 KBytes       
+[  4]  15.00-16.00  sec   359 MBytes  3.01 Gbits/sec    0   1011 KBytes       
+[  4]  16.00-17.00  sec   356 MBytes  2.99 Gbits/sec    0   1.06 MBytes       
+[  4]  17.00-18.00  sec   358 MBytes  3.00 Gbits/sec    0   1.06 MBytes       
+[  4]  18.00-19.00  sec   358 MBytes  3.00 Gbits/sec    0   1.06 MBytes       
+[  4]  19.00-20.00  sec   358 MBytes  3.01 Gbits/sec  476   1.05 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  6.95 GBytes  2.99 Gbits/sec  2485             sender
+[  4]   0.00-20.00  sec  6.95 GBytes  2.99 Gbits/sec                  receiver
+
+iperf Done.
+
+

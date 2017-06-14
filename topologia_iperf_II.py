@@ -10,14 +10,14 @@ import re
 import sys
 
 
-script, host, bw, t= argv
+#script, host, bw, t= argv
 
 
 setLogLevel( 'info' )
 
 
-c0 = RemoteController( 'c0', ip='192.168.1.16', port=6633 )
-c1 = RemoteController( 'c1', ip='192.168.1.17', port=6633 )
+c0 = RemoteController( 'c0', ip='192.168.15.10', port=6633 )
+c1 = RemoteController( 'c1', ip='192.168.15.7', port=6633 )
 
 cmap = { 's0': c0, 's1': c1}
 
@@ -43,7 +43,7 @@ net.addLink(h0, s0)
 net.addLink(h1, s1)
 net.addLink(h2, s0)
 net.addLink(h3, s1)
-net.addLink(s0, s1 ,)
+net.addLink(s0, s1)
 
 
 for c in [ c0, c1 ]:
@@ -52,7 +52,7 @@ for c in [ c0, c1 ]:
 net.build()
 
 net.start()
-
+'''
 h = net.get(host)
 hosts = net.hosts
 
@@ -71,9 +71,9 @@ for i in hosts:
 
 file.close()
 
+'''
 
-
-#CLI(net)
+CLI(net)
 
 
 net.stop()   

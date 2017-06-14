@@ -15,8 +15,8 @@ script, host, bw, t = argv
 
 setLogLevel( 'info' )
 
-c0 = RemoteController( 'c0', ip='192.168.1.16', port=6633 )
-c1 = RemoteController( 'c1', ip='192.168.1.17', port=6633 )
+c0 = RemoteController( 'c0', ip='192.168.15.12', port=6633 )
+c1 = RemoteController( 'c1', ip='192.168.15.4', port=6633 )
 
 cmap = { 's1': c0, 's1': c1}
 
@@ -49,7 +49,7 @@ net.start()
 
 h = net.get(host)
 hosts = net.hosts
-
+'''
 h.sendCmd("iperf3 -s")
 file = open( "TestIperf/" + host + " " + bw + "ps " + t + "s Iperf3 Test Topo I", "wb")
 msgErro = "error - unable to connect to server: No route to host"
@@ -64,9 +64,9 @@ for i in hosts:
 				break
 
 file.close()
+'''
 
-
-#CLI(net)
+CLI(net)
 
 
 net.stop()   

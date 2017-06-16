@@ -16,8 +16,8 @@ import sys
 setLogLevel( 'info' )
 
 
-c0 = RemoteController( 'c0', ip='192.168.15.10', port=6633 )
-c1 = RemoteController( 'c1', ip='192.168.15.7', port=6633 )
+c0 = RemoteController( 'c0', ip='192.168.1.15', port=6633 )
+c1 = RemoteController( 'c1', ip='192.168.1.16', port=6633 )
 
 cmap = { 's0': c0, 's1': c1}
 
@@ -57,21 +57,21 @@ h = net.get(host)
 hosts = net.hosts
 
 h.sendCmd("iperf3 -s")
-file = open("TestIperf/" + host + " " + bw + "ps " + t+ "s Iperf3 Test Topo II", "wb")
+file = open("IperfUdp/topoII/" + host + " " + bw + "ps " + t+ "s Iperf3 Test Topo II", "wb")
 msgErro = "error - unable to connect to server: No route to host"
 
 for i in hosts:
 	if h.IP() != i.IP():
 		file.write("----------------------------- "+i.name+"-------------------------------- \n")
 		while True:
-			output = i.cmd("iperf3 -c " + h.IP() +  " -b "+ bw + " -t " + t)
+			output = i.cmd("iperf3 -c " + h.IP() +  " -u -b "+ bw + " -t " + t)
 			file.write(output +"\n\n")
 			if msgErro not in output:
 				break
 
 file.close()
-
 '''
+
 
 CLI(net)
 

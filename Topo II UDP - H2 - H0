@@ -1,0 +1,91 @@
+iperf3 -c 10.0.0.1 -u -b 10G -t 80
+Connecting to host 10.0.0.1, port 5201
+[ 22] local 10.0.0.3 port 42120 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[ 22]   0.00-1.00   sec  1008 MBytes  8.46 Gbits/sec  129033  
+[ 22]   1.00-2.00   sec   975 MBytes  8.18 Gbits/sec  124820  
+[ 22]   2.00-3.00   sec  1.08 GBytes  9.28 Gbits/sec  141556  
+[ 22]   3.00-4.00   sec  1.05 GBytes  9.05 Gbits/sec  138161  
+[ 22]   4.00-5.00   sec  1.01 GBytes  8.65 Gbits/sec  132031  
+[ 22]   5.00-6.00   sec   916 MBytes  7.68 Gbits/sec  117210  
+[ 22]   6.00-7.00   sec  1.08 GBytes  9.27 Gbits/sec  141409  
+[ 22]   7.00-8.00   sec  1.09 GBytes  9.37 Gbits/sec  143009  
+[ 22]   8.00-9.00   sec  1003 MBytes  8.41 Gbits/sec  128396  
+[ 22]   9.00-10.00  sec  1.00 GBytes  8.60 Gbits/sec  131287  
+[ 22]  10.00-11.00  sec  1.07 GBytes  9.17 Gbits/sec  140025  
+[ 22]  11.00-12.00  sec  1.07 GBytes  9.18 Gbits/sec  140098  
+[ 22]  12.00-13.00  sec  1.08 GBytes  9.24 Gbits/sec  140986  
+[ 22]  13.00-14.00  sec  1.02 GBytes  8.77 Gbits/sec  133799  
+[ 22]  14.00-15.00  sec  1.02 GBytes  8.77 Gbits/sec  133805  
+[ 22]  15.00-16.00  sec  1.04 GBytes  8.94 Gbits/sec  136437  
+[ 22]  16.00-17.00  sec   991 MBytes  8.31 Gbits/sec  126836  
+[ 22]  17.00-18.00  sec  1.14 GBytes  9.83 Gbits/sec  149940  
+[ 22]  18.00-19.00  sec  1.07 GBytes  9.23 Gbits/sec  140766  
+[ 22]  19.00-20.00  sec  1.04 GBytes  8.90 Gbits/sec  135826  
+[ 22]  20.00-21.00  sec  1.06 GBytes  9.12 Gbits/sec  139207  
+[ 22]  21.00-22.00  sec  1.09 GBytes  9.35 Gbits/sec  142618  
+[ 22]  22.00-23.00  sec  1.06 GBytes  9.14 Gbits/sec  139474  
+[ 22]  23.00-24.00  sec  1.02 GBytes  8.77 Gbits/sec  133801  
+[ 22]  24.00-25.00  sec  1.11 GBytes  9.56 Gbits/sec  145921  
+[ 22]  25.00-26.00  sec  1.10 GBytes  9.41 Gbits/sec  143562  
+[ 22]  26.00-27.00  sec  1.04 GBytes  8.93 Gbits/sec  136305  
+[ 22]  27.00-28.00  sec  1.04 GBytes  8.90 Gbits/sec  135760  
+[ 22]  28.00-29.00  sec  1.11 GBytes  9.50 Gbits/sec  144914  
+[ 22]  29.00-30.00  sec  1.06 GBytes  9.10 Gbits/sec  138921  
+[ 22]  30.00-31.00  sec  1.03 GBytes  8.85 Gbits/sec  135074  
+[ 22]  31.00-32.00  sec  1.06 GBytes  9.12 Gbits/sec  139123  
+[ 22]  32.00-33.00  sec  1.04 GBytes  8.93 Gbits/sec  136290  
+[ 22]  33.00-34.00  sec  1.04 GBytes  8.97 Gbits/sec  136913  
+[ 22]  34.00-35.00  sec  1.06 GBytes  9.09 Gbits/sec  138662  
+[ 22]  35.00-36.00  sec  1023 MBytes  8.58 Gbits/sec  130959  
+[ 22]  36.00-37.00  sec  1.07 GBytes  9.18 Gbits/sec  140136  
+[ 22]  37.00-38.00  sec  1.06 GBytes  9.08 Gbits/sec  138511  
+[ 22]  38.00-39.00  sec  1.15 GBytes  9.92 Gbits/sec  151351  
+[ 22]  39.00-40.00  sec  1010 MBytes  8.47 Gbits/sec  129276  
+[ 22]  40.00-41.00  sec  1.07 GBytes  9.15 Gbits/sec  139686  
+[ 22]  41.00-42.00  sec  1.02 GBytes  8.78 Gbits/sec  133920  
+[ 22]  42.00-43.00  sec  1.06 GBytes  9.08 Gbits/sec  138537  
+[ 22]  43.00-44.00  sec  1.06 GBytes  9.08 Gbits/sec  138503  
+[ 22]  44.00-45.00  sec  1.06 GBytes  9.13 Gbits/sec  139376  
+[ 22]  45.00-46.00  sec  1.05 GBytes  9.06 Gbits/sec  138270  
+[ 22]  46.00-47.00  sec  1.03 GBytes  8.85 Gbits/sec  135059  
+[ 22]  47.00-48.00  sec   955 MBytes  8.01 Gbits/sec  122251  
+[ 22]  48.00-49.00  sec   991 MBytes  8.31 Gbits/sec  126846  
+[ 22]  49.00-50.00  sec  1008 MBytes  8.45 Gbits/sec  128991  
+[ 22]  50.00-51.00  sec   931 MBytes  7.81 Gbits/sec  119147  
+[ 22]  51.00-52.00  sec   966 MBytes  8.11 Gbits/sec  123687  
+[ 22]  52.00-53.00  sec   935 MBytes  7.84 Gbits/sec  119681  
+[ 22]  53.00-54.00  sec   970 MBytes  8.13 Gbits/sec  124106  
+[ 22]  54.00-55.00  sec   929 MBytes  7.79 Gbits/sec  118925  
+[ 22]  55.00-56.00  sec   984 MBytes  8.25 Gbits/sec  125903  
+[ 22]  56.00-57.00  sec   959 MBytes  8.04 Gbits/sec  122716  
+[ 22]  57.00-58.00  sec  1.01 GBytes  8.65 Gbits/sec  132018  
+[ 22]  58.00-59.00  sec   949 MBytes  7.96 Gbits/sec  121421  
+[ 22]  59.00-60.00  sec   955 MBytes  8.01 Gbits/sec  122255  
+[ 22]  60.00-61.00  sec   950 MBytes  7.97 Gbits/sec  121654  
+[ 22]  61.00-62.00  sec   947 MBytes  7.95 Gbits/sec  121249  
+[ 22]  62.00-63.00  sec   944 MBytes  7.92 Gbits/sec  120782  
+[ 22]  63.00-64.00  sec   898 MBytes  7.54 Gbits/sec  114987  
+[ 22]  64.00-65.00  sec   950 MBytes  7.97 Gbits/sec  121620  
+[ 22]  65.00-66.00  sec   795 MBytes  6.67 Gbits/sec  101710  
+[ 22]  66.00-67.00  sec   896 MBytes  7.52 Gbits/sec  114681  
+[ 22]  67.00-68.00  sec   952 MBytes  7.98 Gbits/sec  121839  
+[ 22]  68.00-69.00  sec   906 MBytes  7.60 Gbits/sec  115944  
+[ 22]  69.00-70.00  sec   973 MBytes  8.16 Gbits/sec  124482  
+[ 22]  70.00-71.00  sec   876 MBytes  7.35 Gbits/sec  112134  
+[ 22]  71.00-72.00  sec   931 MBytes  7.81 Gbits/sec  119205  
+[ 22]  72.00-73.00  sec   871 MBytes  7.30 Gbits/sec  111433  
+[ 22]  73.00-74.00  sec  1003 MBytes  8.41 Gbits/sec  128363  
+[ 22]  74.00-75.00  sec   913 MBytes  7.66 Gbits/sec  116812  
+[ 22]  75.00-76.00  sec  1009 MBytes  8.46 Gbits/sec  129141  
+[ 22]  76.00-77.00  sec   945 MBytes  7.93 Gbits/sec  121017  
+[ 22]  77.00-78.00  sec   769 MBytes  6.45 Gbits/sec  98402  
+[ 22]  78.00-79.00  sec   568 MBytes  4.76 Gbits/sec  72653  
+[ 22]  79.00-80.00  sec   746 MBytes  6.26 Gbits/sec  95547  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[ 22]   0.00-80.00  sec  78.9 GBytes  8.47 Gbits/sec  0.005 ms  2593178/10337161 (25%)  
+[ 22] Sent 10337161 datagrams
+
+iperf Done.
+root@Vinicius-Note:~/Projetos/TccII# exit
